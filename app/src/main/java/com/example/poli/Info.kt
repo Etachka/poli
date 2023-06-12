@@ -15,5 +15,25 @@ class Info : AppCompatActivity() {
             val intent = Intent(this, List::class.java)
             startActivity(intent)
         }
+        val buttonSketch = findViewById<ImageButton>(R.id.imageButton)
+        buttonSketch.setOnClickListener {
+            val intent = Intent(this, Sketches::class.java)
+            startActivity(intent)
+        }
+        val buttonNotes = findViewById<ImageButton>(R.id.imageButton2)
+        buttonNotes.setOnClickListener {
+            val intent = Intent(this, Notes::class.java)
+            startActivity(intent)
+        }
+        val buttonPhoto = findViewById<ImageButton>(R.id.imageButton3)
+        buttonPhoto.setOnClickListener {
+            val intent = Intent(this, Photo::class.java)
+            startActivity(intent)
+        }
+        val buttonIdentikit = findViewById<ImageButton>(R.id.imageButton4)
+        buttonIdentikit.setOnClickListener {
+            val intent = Intent(this, Identikit::class.java)
+            startActivity(intent)
+        }
     }
 }

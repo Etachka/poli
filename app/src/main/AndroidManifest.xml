@@ -13,6 +13,18 @@
         android:theme="@style/Theme.Poli"
         tools:targetApi="31">
         <activity
+            android:name=".Identikit"
+            android:exported="false" />
+        <activity
+            android:name=".Sketches"
+            android:exported="false" />
+        <activity
+            android:name=".Notes"
+            android:exported="false" />
+        <activity
+            android:name=".Photo"
+            android:exported="false" />
+        <activity
             android:name=".Info"
             android:exported="false" />
         <activity
