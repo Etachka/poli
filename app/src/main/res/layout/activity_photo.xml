@@ -7,7 +7,7 @@
     tools:context=".Photo">
 
     <LinearLayout
-        android:layout_width="410dp"
+        android:layout_width="match_parent"
         android:layout_height="59dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -16,15 +16,15 @@
 
         <TextView
             android:id="@+id/textView12"
-            android:layout_width="560dp"
+            android:layout_width="331dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="TextView" />
 
         <ImageButton
             android:id="@+id/imageButton6"
-            android:layout_width="262dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@android:color/transparent"
             android:scaleType="centerInside"
@@ -33,7 +33,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="670dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
