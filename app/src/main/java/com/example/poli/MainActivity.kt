@@ -12,7 +12,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         val button = findViewById<Button>(R.id.button3)
+        button.setOnClickListener {
+            validateAndProcessData()
+        }
 
         // Переход на окно регистрации
         val buttonReg = findViewById<Button>(R.id.button4)
@@ -34,11 +38,8 @@ class MainActivity : AppCompatActivity() {
             val message = "Некорректный ввод"
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
         } else {
-            val button = findViewById<Button>(R.id.button3)
-            button.setOnClickListener {
-                val intent = Intent(this, kotlin.collections.List::class.java)
-                startActivity(intent)
-            }
+            val intent = Intent(this, List::class.java)
+            startActivity(intent)
         }
     }
 }
