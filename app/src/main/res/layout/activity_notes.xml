@@ -9,34 +9,33 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="63dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
+        android:layout_height="60dp"
         android:orientation="horizontal"
+        android:background="#D9D9D9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/textView17"
             android:layout_width="331dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="TextView" />
 
         <ImageButton
-            android:id="@+id/imageButton7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@android:color/transparent"
+            android:id="@+id/imageButton9"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:scaleType="centerInside"
-            app:srcCompat="@drawable/__5" />
+            android:background="@drawable/__5"
+            android:adjustViewBounds="true"
+            android:layout_margin="5"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="665dp"
+        android:layout_height="670dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

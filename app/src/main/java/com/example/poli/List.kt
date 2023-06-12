@@ -1,6 +1,5 @@
 package com.example.poli
 
-
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -15,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity
 
 import kotlin.collections.List
 
-
 class List<T> : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,13 +23,9 @@ class List<T> : AppCompatActivity() {
             val intent = Intent(this, Info::class.java)
             startActivity(intent)
         }
-
-
     }
 
     fun ccc(view: View) {
 
     }
-
-
 }

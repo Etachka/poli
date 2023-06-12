@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // hihihi
         val button = findViewById<Button>(R.id.button3)
         button.setOnClickListener {
             validateAndProcessData()
