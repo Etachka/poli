@@ -10,7 +10,7 @@ class Notes : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notes)
-        val button = findViewById<ImageButton>(R.id.imageButton7)
+        val button = findViewById<ImageButton>(R.id.buttonNotes)
         button.setOnClickListener {
             val intent = Intent(this, Info::class.java)
             startActivity(intent)

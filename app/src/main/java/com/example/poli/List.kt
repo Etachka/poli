@@ -11,8 +11,12 @@ import android.widget.BaseAdapter
 import android.widget.Button
 import android.widget.GridView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Recycler
+import com.example.poli.recadapters.Data
+import com.example.poli.recadapters.FeelRecycler
+import com.example.poli.recadapters.MyData
 
 import kotlin.collections.List
 
@@ -24,15 +28,14 @@ private var lst: Llist?=null
 
 class List<T> : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        val root: View = findViewById(android.R.id.content)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
-        sqlDBHelper = DBHelper(this)
-        recyclerView = findViewById(R.id.rcl)
-        adapter = DBHelper.RecyclerListClasses()
-        recyclerView.adapter = adapter
 
-        val lst = sqlDBHelper.getLlist()
-        adapter?.addItems(lst)
+        val feel_Recycler : RecyclerView = root.findViewById(R.id.rcl)
+        feel_Recycler.adapter = FeelRecycler(this,MyData().list)
+
         val button = findViewById<Button>(R.id.button5)
         button.setOnClickListener {
             val intent = Intent(this, Info::class.java)

@@ -13,7 +13,7 @@ class Info : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info)
 
-        val button = findViewById<ImageButton>(R.id.imageButton5)
+        val button = findViewById<ImageButton>(R.id.buttonInfo)
         button.setOnClickListener {
             val intent = Intent(this, List::class.java)
             startActivity(intent)

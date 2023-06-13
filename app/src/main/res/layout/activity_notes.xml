@@ -24,13 +24,13 @@
             android:text="TextView" />
 
         <ImageButton
-            android:id="@+id/imageButton9"
+            android:id="@+id/buttonNotes"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:scaleType="centerInside"
             android:background="@drawable/__5"
             android:adjustViewBounds="true"
-            android:layout_margin="5"/>
+            android:layout_margin="5dp"/>
     </LinearLayout>
 
     <LinearLayout

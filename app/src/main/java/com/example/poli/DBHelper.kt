@@ -154,13 +154,13 @@ class DBHelper(context: Context):
             notifyDataSetChanged()
         }
         class MyVH(itemView: View):RecyclerView.ViewHolder(itemView){
-            val id: TextView = itemView.findViewById(R.id.)
-            val name: TextView = itemView.findViewById(R.id.)
+            val id: TextView = itemView.findViewById(R.id.text_ID)
+            //val name: TextView = itemView.findViewById(R.id.)
             val nnotes: TextView = itemView.findViewById(R.id.textViewDescription)
 
             fun bindView(lst:Llist){
                 id.text = lst.listId.toString()
-                name.text = lst.name
+                //name.text = lst.name
                 nnotes.text = lst.nnotes
             }
         }
