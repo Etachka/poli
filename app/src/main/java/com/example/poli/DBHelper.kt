@@ -43,7 +43,7 @@ class DBHelper(context: Context):
                 "secondName varchar(40), " +
                 "firstName varchar(40), " +
                 "patronymic varchar(40), " +
-                "phone string(11), " +
+                "phone varchar(11), " +
                 "login varchar(40), " +
                 "password varchar(40))")
 
@@ -62,28 +62,61 @@ class DBHelper(context: Context):
     }
 //Получение списка дел
     fun getLlist(): ArrayList<Llist> {
-    val ListList: ArrayList<Llist> = ArrayList()
+        val ListList: ArrayList<Llist> = ArrayList()
 
-    val query = "Select $listId, $name, $nnotes from $Llist"
-    val db = this.readableDatabase
+        val query = "Select $listId, $name, $nnotes from $Llist"
+        val db = this.readableDatabase
 
-    val cursor: Cursor?
-    cursor = db.rawQuery(query, null)
+        val cursor: Cursor?
+        cursor = db.rawQuery(query, null)
 
-    var listId: Int
-    var name: String
-    var nnotes: String
-    if(cursor.moveToFirst())
-    {
-        do {
-            listId = cursor.getInt(0)
-            name = cursor.getString(1)
-            nnotes = cursor.getString(2)
-            val lst = Llist(listId = listId, name = name, nnotes = nnotes)
-            ListList.add(lst)
-        }while (cursor.moveToNext())
+        var listId: Int
+        var name: String
+        var nnotes: String
+        if(cursor.moveToFirst())
+        {
+            do {
+                listId = cursor.getInt(0)
+                name = cursor.getString(1)
+                nnotes = cursor.getString(2)
+                val lst = Llist(listId = listId, name = name, nnotes = nnotes)
+                ListList.add(lst)
+            }while (cursor.moveToNext())
+        }
+        return ListList
     }
-    return ListList
+//Получение списка пользователей
+    fun getUser(): ArrayList<User> {
+        val ListUser: ArrayList<User> = ArrayList()
+
+        val query = "Select $userId, $secondName, $firstName, $patronymic, $phone, $login, $password from $User"
+        val db = this.readableDatabase
+
+        val cursor: Cursor?
+        cursor = db.rawQuery(query, null)
+
+        var userId: Int
+        var secondName: String
+        var firstName: String
+        var patronymic: String
+        var phone: String
+        var login: String
+        var password: String
+        if(cursor.moveToFirst())
+        {
+            do {
+                userId = cursor.getInt(0)
+                secondName = cursor.getString(1)
+                firstName = cursor.getString(2)
+                patronymic = cursor.getString(3)
+                phone = cursor.getString(4)
+                login = cursor.getString(5)
+                password = cursor.getString(6)
+                val lstU = User(userId = userId, secondName = secondName, firstName = firstName, patronymic = patronymic, phone = phone, login = login, password = password)
+                ListUser.add(lstU)
+            }while (cursor.moveToNext())
+        }
+        return ListUser
     }
 //Добавление нового дела
     fun addLlist(lst:Llist):Long{
@@ -94,6 +127,22 @@ class DBHelper(context: Context):
     values.put("notes", lst.nnotes)
 
     val success = db.insert("$Llist", null, values)
+    db.close()
+    return success
+    }
+//Добавление нового пользователя
+    fun addUser(lstU:User):Long {
+    val db = this.writableDatabase
+    val values = ContentValues()
+    values.put("userId", lstU.userId)
+    values.put("secondName", lstU.secondName)
+    values.put("firstName", lstU.firstName)
+    values.put("patronymic", lstU.patronymic)
+    values.put("phone", lstU.phone)
+    values.put("login", lstU.login)
+    values.put("password", lstU.password)
+
+    val success = db.insert("$User", null, values)
     db.close()
     return success
     }
